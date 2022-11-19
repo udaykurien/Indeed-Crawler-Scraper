@@ -9,7 +9,6 @@ sys.path.insert(0,"/home/nuclear/Github/PythonPrograms/Secrets")
 
 # Connect to database
 import crawler_pg_secrets as p
-
 pg_params = {
     'host' : p.host,
     'user' : p.user,
@@ -17,7 +16,6 @@ pg_params = {
     'password' : p.password,
     'port' : p.port
 }
-
 conn =  psycopg2.connect(**pg_params)
 conn.commit()
 cur = conn.cursor()
@@ -32,7 +30,6 @@ try:
 except:
     print('FAIL: ' + sql_cmnd)
 conn.commit()
-
 # Create new horizon table
 sql_cmnd = "create table "\
     + table_name\
